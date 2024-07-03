@@ -126,3 +126,42 @@ nav {
   height: 2px;
   background: var(--first-color);
 }
+
+/* mode */
+
+.mode {
+  display: flex;
+  align-items: center;
+  margin-right: -2%;
+}
+
+.moon-sun {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: var(--mode-color);
+}
+
+.moon-sun :is(#moon, #sun) {
+  position: absolute;
+  transition: 0.2s ease-in-out;
+}
+
+#sun {
+  opacity: 0;
+}
+
+body.dark #sun {
+  opacity: 1;
+}
+
+body.dark #moon {
+  opacity: 0;
+}
+
+
