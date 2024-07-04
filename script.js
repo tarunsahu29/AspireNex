@@ -12,6 +12,55 @@ document.addEventListener('click', function (event) {
   }
 })
 
+//email
+function sendEmail() {
+  const name = document.getElementById('name').value
+  const email = document.getElementById('email').value
+  const subject = document.getElementById('subject').value
+  const message = document.getElementById('message').value
+
+  const mailtoLink = `mailto:tsahu9461@gmail.com?subject=${encodeURIComponent(
+    subject,
+  )}&body=${encodeURIComponent(
+    'Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message,
+  )}`
+  window.location.href = mailtoLink
+}
+
+//pdf download
+document
+  .getElementById('download-cv-btn')
+  .addEventListener('click', function () {
+    var downloadLink = document.createElement('a')
+    downloadLink.href =
+      'https://docs.google.com/document/d/1OAZsmFq94dvT4iu88vNP2pD4K7BXegeFrLQT-eJmNrc/edit' // Replace with the actual path to your PDF file
+    downloadLink.download = 'Resume' // Specify the file name for download
+    document.body.appendChild(downloadLink)
+    downloadLink.click()
+    document.body.removeChild(downloadLink)
+  })
+
+//access to all of my projects
+document
+  .getElementById('completed-projects')
+  .addEventListener('click', function () {
+    var downloadLink = document.createElement('a')
+    downloadLink.href =
+      'https://docs.google.com/document/d/1F2XIzE6mQFxuvBfRSsK9xlbbKVZkEBJ9URFlGLJX_qg/edit?usp=sharing' // Replace with the actual path to your PDF file
+    downloadLink.download = 'Projects completed' // Specify the file name for download
+    document.body.appendChild(downloadLink)
+    downloadLink.click()
+    document.body.removeChild(downloadLink)
+  })
+
+//logo-nav
+document.addEventListener('DOMContentLoaded', function () {
+  var logo = document.querySelector('.main-logo')
+  logo.addEventListener('click', function () {
+    window.location.href = '#home' // Replace with your home page URL
+  })
+})
+
 function myMenuFunction() {
   var menuBtn = document.getElementById('myNavMenu')
   if (menuBtn.classList.contains('responsive')) {
@@ -20,6 +69,20 @@ function myMenuFunction() {
     menuBtn.classList.add('responsive')
   }
 }
+
+//navigation from hire to contact
+document.getElementById('hire-me-btn').addEventListener('click', function () {
+  document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })
+})
+
+document.addEventListener('DOMContentLoaded', function () {
+  const hireMeBtn = document.querySelector('.about-me-btn')
+  const contactSection = document.getElementById('contact')
+
+  hireMeBtn.addEventListener('click', function () {
+    contactSection.scrollIntoView({ behavior: 'smooth' })
+  })
+})
 
 // Dark Mode
 
@@ -77,62 +140,20 @@ const srRight = ScrollReveal({
 })
 srRight.reveal('.skill', { delay: 100 })
 srRight.reveal('.skill-box', { delay: 100 })
+srRight.reveal('.form-control', { delay: 100 })
 
 // active link
 
-// const sections = document.querySelectorAll('.section[id]')
+document.addEventListener('DOMContentLoaded', function () {
+  document.querySelector('.nav-link[href="#home"]').classList.add('active-link')
+})
 
-// function scrollActive() {
-//   const scrollY = window.scrollY
-//   sections.forEach((current) => {
-//     const sectionHeight = current.offsetHeight,
-//       sectionTop = current.offsetTop - 50,
-//       sectionId = current.getAttribute('id')
-//     if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-//       document
-//         .querySelector('.nav-menu a[href*=' + sectionId + ']')
-//         .classList.add('active-link')
-//     } else {
-//       document
-//         .querySelector('.nav-menu a[href*=' + sectionId + ']')
-//         .classList.remove('active-link')
-//     }
-//   })
-// }
-
-// window.addEventListener('scroll', scrollActive)
-document.addEventListener('DOMContentLoaded', () => {
-  const sections = document.querySelectorAll('.section[id]');
-
-  function scrollActive() {
-    const scrollY = window.scrollY;
-
-    sections.forEach((current) => {
-      const sectionHeight = current.offsetHeight;
-      const sectionTop = current.offsetTop - 50;
-      const sectionId = current.getAttribute('id');
-      const sectionLink = document.querySelector('.nav-menu a[href*=' + sectionId + ']');
-
-      if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-        sectionLink.classList.add('active-link');
-      } else {
-        sectionLink.classList.remove('active-link');
-      }
-    });
-
-    // Check if no section is in view, if so, activate the "Home" link
-    const activeLinks = document.querySelectorAll('.nav-menu .active-link');
-    if (activeLinks.length === 0) {
-      document.querySelector('.nav-menu a[href*="#home"]').classList.add('active-link');
-    }
-  }
-
-  window.addEventListener('scroll', scrollActive);
-
-  // Initial call to set the active link when the page loads
-  scrollActive();
-});
-
-
-
-
+// Update the active link based on the clicked navigation link
+document.querySelectorAll('.nav-link').forEach((link) => {
+  link.addEventListener('click', function () {
+    document
+      .querySelectorAll('.nav-link')
+      .forEach((link) => link.classList.remove('active-link'))
+    this.classList.add('active-link')
+  })
+})

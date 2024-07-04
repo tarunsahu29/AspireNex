@@ -13,7 +13,7 @@
     <div class="container">
       <nav id="header">
         <div class="nav-logo">
-          <p class="nav-name">Logo</p>
+          <img class="main-logo" src="images/logo.png" alt="logo">
         </div>
         <div class="nav-menu" id="myNavMenu">
           <ul class="nav_menu_list">
@@ -51,7 +51,7 @@
         <section class="featured-box" id="home">
           <div class="featured-text">
             <div class="hello">
-              <p>Hello I'm</p>
+              <p>Hello I'm a</p>
             </div>
             <div class="featured-name">
               <span class="typedText"></span>
@@ -60,8 +60,8 @@
               <p>My name is Tarun!, I'm a Web Developer</p>
             </div>
             <div class="text-btn">
-              <button class="btn hire-btn">Hire Me</button>
-              <button class="btn">Download CV<i class="uil uil-file"></i></button>
+              <button class="btn hire-btn" id="hire-me-btn">Hire Me</button>
+              <button id="download-cv-btn" class="btn">Download CV<i class="uil uil-file"></i></button>
             </div>
             <div class="social_icons">
               <div class="icon_circle"></div>
@@ -89,14 +89,14 @@
                   <figcaption>
                     <img src="/images/profile.png" alt="" class="profile" />
                     <h2>Web Developer</h2>
-                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nesciunt autem asperiores delectus unde deserunt quas iure nihil nostrum.</p>
+                    <p>As a pre-final year student at IIIT Vadodara, I am known for my dedication and extensive project work, including a notable research project. Specializing in the MERN stack as a Full Stack Developer, I am committed to continuous learning and eager to further develop my professional skills.</p>
                 </figure>
                 <button class="about-me-btn">Hire me</button>
               </div>
             </div>
             <div class="skill">
               <div class="skill-box">
-                <span class="title">HTML</span>
+                <span class="title">HTML and CSS</span>
                 <div class="skill-bar">
                   <span class="skill-per html">
                     <span class="tooltip">90%</span>
@@ -104,7 +104,7 @@
                 </div>
               </div>
               <div class="skill-box">
-                <span class="title">CSS</span>
+                <span class="title">Javascript</span>
                 <div class="skill-bar">
                   <span class="skill-per css">
                     <span class="tooltip">90%</span>
@@ -112,7 +112,7 @@
                 </div>
               </div>
               <div class="skill-box">
-                <span class="title">Python</span>
+                <span class="title">React.js</span>
                 <div class="skill-bar">
                   <span class="skill-per python">
                     <span class="tooltip">85%</span>
@@ -120,7 +120,7 @@
                 </div>
               </div>
               <div class="skill-box">
-                <span class="title">Javascript</span>
+                <span class="title">Express</span>
                 <div class="skill-bar">
                   <span class="skill-per javascript">
                     <span class="tooltip">85%</span>
@@ -128,7 +128,15 @@
                 </div>
               </div>
               <div class="skill-box">
-                <span class="title">C++</span>
+                <span class="title">Node.js</span>
+                <div class="skill-bar">
+                  <span class="skill-per cpp">
+                    <span class="tooltip">95%</span>
+                  </span>
+                </div>
+              </div>
+              <div class="skill-box">
+                <span class="title">MongoDB</span>
                 <div class="skill-bar">
                   <span class="skill-per cpp">
                     <span class="tooltip">95%</span>
@@ -144,20 +152,20 @@
               <h1>Projects</h1>
             </div>
             <div class="project-container">
-              <div class="project-box">
+              <div id="completed-projects" class="project-box">
                 <i class="uil uil-briefcase-alt"></i>
                 <h3>Completed</h3>
                 <label for="">Projects</label>
               </div>
               <div class="project-box">
                 <i class="uil uil-users-alt"></i>
-                <h3>Clients</h3>
-                <label for="">Happy Clients</label>
+                <h3>Research Intern</h3>
+                <label for="">Research Internship at IIIT Vadodara</label>
               </div>
               <div class="project-box">
                 <i class="uil uil-award"></i>
                 <h3>Experience</h3>
-                <label for="">I am a fresher but an enthusiastic web developer</label>
+                <label for="">As a fresher in web development, I bring a passionate commitment to continuous learning and innovation</label>
               </div>
             </div>
           </section>
@@ -178,15 +186,15 @@
               <div class="col">
                 <div class="form-control">
                   <div class="form-inputs">
-                    <input type="text" class="input-field" placeholder="Your Name">
-                    <input type="text" class="input-field" placeholder="Your Email">
+                    <input type="text" id="name" class="input-field" placeholder="Your Name">
+                    <input type="email" id="email" class="input-field" placeholder="Your Email">
                   </div>
                   <div class="text-area">
-                    <input type="text" class="input-subject" placeholder="Subject">
-                    <textarea placeholder="Message"></textarea>
+                    <input type="text" id="subject" class="input-subject" placeholder="Subject">
+                    <textarea id="message" placeholder="Message"></textarea>
                   </div>
                   <div class="form-button">
-                    <button class="btn">Send<i class="uil uil-message"></i></button>
+                    <button class="btn" onclick="sendEmail()">Send<i class="uil uil-message"></i></button>
                   </div>
                 </div>
               </div>
@@ -221,6 +229,7 @@
           </div>
         </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
     <script src="script.js"></script>

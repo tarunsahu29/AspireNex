@@ -73,6 +73,17 @@ nav {
 
 .nav-logo {
   position: relative;
+  display: flex;
+  align-items: center; 
+}
+
+.nav-logo img {
+  max-width: 100px; 
+  height: auto;
+}
+
+.nav-logo .main-logo:hover {
+  cursor: pointer;
 }
 
 .nav-name {
@@ -162,6 +173,12 @@ body.dark #sun {
 
 body.dark #moon {
   opacity: 0;
+}
+
+body.dark .project-box h3,
+body.dark .input-field,
+body.dark .input-subject {
+  color: #ffffffdc;
 }
 
 /* wrapper */
